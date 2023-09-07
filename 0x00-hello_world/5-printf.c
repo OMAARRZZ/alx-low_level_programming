@@ -1,5 +1,5 @@
 #include<stdio.h>
-/*
+/**
  * main - Entry point
  * Description: printing the desired statement
  * Return:Always 0 (success)
