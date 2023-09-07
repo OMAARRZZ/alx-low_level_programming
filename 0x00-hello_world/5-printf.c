@@ -1,7 +1,6 @@
 /*
  * main - Entry point
- * The main functions of this program
- * printing the desired statement
+ * Description: printing the desired statement
  * Return:Always 0 (success)
  */
 #include<stdio.h>
