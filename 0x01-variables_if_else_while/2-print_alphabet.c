@@ -1,5 +1,7 @@
 #include <stdio.h>
-/** main - prints outs letters 
+/**
+ * main - entry point
+ * description: prints all the letters
  * Return: always 0 (successfull)
  */
 int main(void)
@@ -10,5 +12,5 @@ for (letter = 'a'; letter <= 'z'; letter++)
 putchar(letter);
 }
 putchar('\n');
-return 0;
+return (0);
 }
