@@ -2,7 +2,7 @@
 /**
  * main - entry point
  * description: prints all letters but 2
- * Return always 0 (successfull)
+ * Return: always 0 (successfull)
  */
 int main(void)
 {
@@ -15,5 +15,5 @@ putchar(letter);
 }
 }
 putchar('\n');
-return 0;
+return (0);
 }
