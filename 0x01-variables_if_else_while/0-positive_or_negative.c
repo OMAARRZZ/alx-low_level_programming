@@ -2,7 +2,7 @@
 #include <time.h>
 #include<stdio.h>
 /**
- * Main - Entry point
+ * main - Entry point
  * Description: Checks if number is +ve, -ve or =0
  * Return: Always 0 (success)
  */
