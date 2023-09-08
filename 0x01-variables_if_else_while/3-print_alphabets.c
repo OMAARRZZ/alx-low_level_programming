@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
- * main - entry point 
+ * main - entry point
  * description: prints lower and upper case letters
  * Return: always 0 (successfull)
  */
