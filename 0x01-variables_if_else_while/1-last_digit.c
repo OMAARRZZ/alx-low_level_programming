@@ -4,7 +4,7 @@
 /**
 * main - entry point
 * description: getting the last digit of a random generated number
-* return: always 0 (success)
+* Return: always 0 (success)
 */
 int main(void)
 {
@@ -26,5 +26,5 @@ else if (lastdigit < 6)
 {
 printf("and is less than 6 and not 0\n");
 }
-return(0);
+return (0);
 }
