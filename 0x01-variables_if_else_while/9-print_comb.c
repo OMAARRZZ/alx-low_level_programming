@@ -7,17 +7,11 @@
 int main(void)
 {
 int i;
-int z;
 for (i = 0; i < 10 ; i++)
-{
-z=i;
-while(z<10)
 {
 putchar('0'+i);
 putchar(',');
-putchar('0'+z);
-z++;
-}
+putchar(' ');
 }
 return (0);
 }
