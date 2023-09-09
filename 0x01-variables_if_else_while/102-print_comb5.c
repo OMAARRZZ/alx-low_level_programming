@@ -6,28 +6,19 @@
  */
 int main(void)
 {
-int i, z, j, y;
-for (i = 0; i < 10; i++)
+int i, j;
+for (i = 0; i < 100; i++)
 {
-for (z = 0; z < 10; z++)
+for (j = i; j < 100; j++) 
 {
-for (j = 0; j < 10; j++)
-{
-for (y = 1; y < 10; y++)
-{
-putchar('0' + i);
-putchar('0' + z);
+putchar((i / 10) + '0');
+putchar((i % 10) + '0');
 putchar(' ');
-putchar('0' + j);
-putchar('0' + y);
-if (i != 9 || z != 9 || j != 9 || y != 9)
-{
+putchar((j / 10) + '0');
+putchar((j % 10) + '0');
 putchar(',');
 putchar(' ');
 }
 }
-}
-}
-}
-return (0);
+return (0)
 }
