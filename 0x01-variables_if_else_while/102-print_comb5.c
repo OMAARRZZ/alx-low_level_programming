@@ -5,7 +5,7 @@
  * Return: always 0 (successful)
  */
 int main(void) {
-int i, z, j, y, ctr;
+int i, z, j, y;
 for (i = 0;i < 10 ; i++)
 {
 for (z = 0;z < 10 ; z++)
