@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 /**
  * _abs - checks if n is +ve or -ve
  * @c: is the value to be checked
@@ -7,7 +6,9 @@
  */
 int _abs(int c)
 {
-int absvlue;
-absvlue=abs(c);
-return (absvlue);
+if(c < 0)
+{
+return -c;
+}
+return c;
 }
