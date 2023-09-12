@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 /**
  * _abs - checks if n is +ve or -ve
  * @c: is the value to be checked
