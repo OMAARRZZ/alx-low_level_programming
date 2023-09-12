@@ -1,4 +1,5 @@
 #include "main.h"
+#include <limits.h>
 /**
  * print_last_digit - prints the last digit of a number
  * @c: is number to op on
