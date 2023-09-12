@@ -7,8 +7,7 @@
 int print_last_digit(int c)
 {
 int lastvlue;
-c=_abs(c);
-lastvlue  = c % 10;
+lastvalue = _abs(c) % 10;
 _putchar('0' + lastvlue);
 return (lastvlue);
 }
