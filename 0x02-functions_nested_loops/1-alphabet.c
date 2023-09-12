@@ -1,20 +1,6 @@
 #include <stdio.h>
-/**
- * prototype
- */
-int _putchar(char c);
-/**
- * function to print lowercase alphabets
- */
-void print_alphabet(void)
-{
-char letter = 'a';
-while (letter <= 'z') {
-_putchar(letter);
-letter++;
-}
-_putchar('\n');
-}
+/* Function prototype for print_alphabet */
+void print_alphabet(void);
 /**
  * main - entry point
  * description: prints alphabets in lowercase
@@ -24,4 +10,15 @@ int main(void)
 {
 print_alphabet();
 return (0);
+}
+/* Function to print the lowercase alphabet */
+void print_alphabet(void)
+{
+char letter = 'a';
+while (letter <= 'z')
+{
+putchar(letter);
+letter++;
+}
+putchar('\n');
 }
