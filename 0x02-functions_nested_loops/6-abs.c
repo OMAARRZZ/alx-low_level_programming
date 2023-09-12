@@ -4,7 +4,7 @@
  * @c: is the value to be checked
  * Return: absolute value
  */
-int int _abs(int c)
+int _abs(int c)
 {
 int absvlue;
 absvlue=abs(c);
