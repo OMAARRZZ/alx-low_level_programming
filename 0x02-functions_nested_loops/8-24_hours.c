@@ -15,8 +15,3 @@ printf("%02d:%02d\n", hour, minute);
 }
 }
 }
-int main(void)
-{
-jack_bauer();
-return 0;
-}
