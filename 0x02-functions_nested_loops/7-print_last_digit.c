@@ -7,6 +7,10 @@
 int print_last_digit(int c)
 {
 int lastvalue;
+if (c == INT_MIN) 
+{
+c = 8;
+}
 if (c < 0) 
 {
 c = -c;
