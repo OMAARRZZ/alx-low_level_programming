@@ -22,5 +22,5 @@ c = c;
 }
 lastvalue = c % 10;
 _putchar('0' + lastvalue);
-return lastvalue;
+return (lastvalue);
 }
