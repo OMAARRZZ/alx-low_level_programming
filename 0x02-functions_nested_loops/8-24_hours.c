@@ -1,8 +1,8 @@
 #include <stdio.h>
+#include "main.h"
 /**
- * print_last_digit - prints the last digit of a number
- * @c: is number to op on
- * Return: value of the last digit of the number
+ * jack_bauer - prints every minute of the day of Jack Bauer
+ * Return: void
  */
 void jack_bauer(void)
 {
