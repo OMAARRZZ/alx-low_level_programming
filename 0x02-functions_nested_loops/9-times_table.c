@@ -16,10 +16,12 @@ while (j < 10)
 if (j == 9)
 {
 printf("%d/n", i*9);
+j++;
 }
 else
 {
 printf("%d, ", i*9);
+j++;
 }
 }
 i++;
