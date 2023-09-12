@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 /**
  * print_sign - checks if n is +ve or -ve
  * @n: is the value to be checked
