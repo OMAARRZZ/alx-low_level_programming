@@ -1,15 +1,27 @@
 #include <stdio.h>
 #include "main.h"
 /**
- * times_table - prints the 9 time table
+ * times_table - prints the time table
  * Return: void
  */
 void times_table(void)
 {
-int i=0;
-while(i<10)
+int i = 0;
+int j = 0;
+while (i < 10)
 {
-printf("%d",i*9);
+j = 0;
+while (j < 10)
+{
+if (j == 9)
+{
+printf("%d/n", i*9);
+}
+else
+{
+printf("%d, ", i*9);
+}
+}
 i++;
 }
 }
