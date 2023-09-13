@@ -15,12 +15,12 @@ while (j < 10)
 {
 if (j == 9)
 {
-printf("%d/n", i*9);
+printf("%d\n", i*j);
 j++;
 }
 else
 {
-printf("%d, ", i*9);
+printf("%d, ", i*j);
 j++;
 }
 }
