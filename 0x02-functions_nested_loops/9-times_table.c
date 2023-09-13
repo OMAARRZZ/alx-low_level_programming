@@ -12,6 +12,21 @@ while (i < 10)
 {
 j = 0;
 while (j < 10)
+{ 
+if((j+1) * (i+1) < 10 ))
+{
+if (j == 9)
+{
+printf("%d\n", i*j);
+j++;
+}
+else
+{
+printf("%d,  ", i*j);
+j++;
+}
+}
+else
 {
 if (j == 9)
 {
@@ -23,6 +38,7 @@ else
 printf("%d, ", i*j);
 j++;
 }
+} 
 }
 i++;
 }
