@@ -2,7 +2,7 @@
 /**
  * main - Entry point
  * Description:tests function that prints if integer is positive, negative, or zero
- * Return: 0
+ * Return: always 0 (successfull)
  */
 int main(void)
 {
