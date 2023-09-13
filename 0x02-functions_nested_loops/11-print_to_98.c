@@ -2,6 +2,7 @@
 #include "main.h"
 /**
  * print_to_98 - prints all natural numbers
+ * @n: last number printed
  * Return: void
  */
 void print_to_98(int n)
