@@ -6,40 +6,22 @@
  */
 void times_table(void)
 {
-int i = 0;
-int j = 0;
-while (i < 10)
+int num, mult, prod;
+for (num = 0 ; num <= 9; mult++)
 {
-j = 0;
-while (j < 10)
-{ 
-if ((j+1) * (i+1) < 10 )
+_putchar(47);
+for (mult =1; mult <=9; mult++)
 {
-if (j == 9)
+_putchar(' ');
+_putchar(',');
+prod = num * mult;
+if (prod <= 9)
 {
-printf("%d\n", i*j);
-j++;
+_putchar(' ');
 }
 else
-{
-printf("%d,  ", i*j);
-j++;
+_putchar((prod / 10 ) + 48);
+_putchar((prod % 10 ) + 48);
 }
-}
-else
-{
-if (j == 9)
-{
-printf("%d\n", i*j);
-j++;
-}
-else
-{
-printf("%d, ", i*j);
-j++;
-}
-} 
-}
-i++;
-}
+_putchar('\n');
 }
