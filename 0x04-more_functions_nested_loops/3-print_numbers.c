@@ -4,9 +4,11 @@
  */
 void print_numbers(void)
 {
-for (int i = 0; i < 10; i++)
+int i=0;
+while(i < 10)
 {
-__putchar('0' + i);
+_putchar('0' + i);
+i++;
 }
-__putchar('\n');
+_putchar('\n');
 }
