@@ -14,7 +14,7 @@ return;
 i = 0;
 while (i < size)
 {
- = 0;
+j = 0;
 while (j < size)
 {
 _putchar('#');
