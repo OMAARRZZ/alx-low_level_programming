@@ -18,5 +18,5 @@ while (i < n)
 printf(", %d", a[i]);
 i++;
 }
-printf("\n");  // Print a new line
+printf("\n");
 }
