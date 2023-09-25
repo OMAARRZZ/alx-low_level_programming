@@ -13,11 +13,17 @@ if (*s == c)
 {
 return (s);
 }
+else
+{
 s++;
+}
 }
 if (*s == c)
 {
 return (s);
 }
+else
+{
 return (NULL);
+}
 }
