@@ -1,14 +1,14 @@
 #include "main.h"
 /**
- * _abs - outputs absolut value of integer input
- * @i: integer to check
- *
- * Return: i
+ * _abs - checks if n is +ve or -ve
+ * @c: is the value to be checked
+ * Return: absolute value
  */
-
-int _abs(int i)
+int _abs(int c)
 {
-	if (i < 0)
-		i = i * -1;
-	return (i);
+if (c < 0)
+{
+return (-c);
+}
+return (c);
 }
