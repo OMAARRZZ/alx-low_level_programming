@@ -19,7 +19,7 @@ if (array == NULL)
 {
 return (NULL);
 }
-while(i < size)
+while (i < size)
 {
 array[i] = c;
 i++;
