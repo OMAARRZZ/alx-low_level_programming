@@ -6,11 +6,10 @@
  * @c: character to initialize the array with
  * Return: pointer to the array, or NULL if it fails
  */
-char *create_array(unsigned int size, char *c)
+char *create_array(unsigned int size, char c)
 {
 char *array;
-unsigned int i;
-(void)c;
+unsigned int i = 0;
 if (size == 0)
 {
 return (NULL);
@@ -18,12 +17,11 @@ return (NULL);
 array = malloc(sizeof(char) * size);
 if (array == NULL)
 {
-return NULL;
+return (NULL);
 }
-i = 0;
-while (i < size)
+while(i < size)
 {
-array[i] = 0x0a;
+array[i] = c;
 i++;
 }
 return (array);
