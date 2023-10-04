@@ -1,50 +1,41 @@
 #include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
 /**
- * argstostr - Concatenates all the arguments into a new string.
+ * argstostr - Concatenates all the arguments of the program.
  * @ac: The number of arguments.
- * @av: Array of argument strings.
- * Return: A pointer to a new string containing the concatenated arguments,
- * or NULL if it fails.
+ * @av: An array of strings containing the arguments.
+ *
+ * Return: A pointer to the concatenated string, or NULL if it fails.
  */
 char *argstostr(int ac, char **av)
 {
-int total_length = 0;
-int i = 0, j = 0;
 if (ac == 0 || av == NULL)
 {
 return NULL;
 }
+int total_length = 0;
+int i = 0;
 while (i < ac)
 {
-j = 0;
-while (av[i][j] != '\0')
-{
-total_length++;
-j++;
-}
-total_length++; // for newline character
+total_length += strlen(av[i]) + 1; // +1 for the newline character
 i++;
 }
-char *concatenated_str = (char *)malloc((total_length + 1) * sizeof(char));
-if (concatenated_str == NULL)
-{
+char *result = malloc(total_length + 1); // +1 for the null terminator
+if (result == NULL)
+}
 return NULL;
 }
+int index = 0;
 i = 0;
-int position = 0;
 while (i < ac)
 {
-j = 0;
-while (av[i][j] != '\0')
-{
-concatenated_str[position] = av[i][j];
-position++;
-j++;
-}
-concatenated_str[position] = '\n';
-position++;
+int arg_length = strlen(av[i]);
+strncpy(result + index, av[i], arg_length);
+index += arg_length;
+result[index++] = '\n';
 i++;
 }
-concatenated_str[position] = '\0';
-return concatenated_str;
-}
+result[total_length] = '\0';
+return result;
+
