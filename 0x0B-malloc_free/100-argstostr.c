@@ -1,43 +1,42 @@
 #include <stdlib.h>
-#include <stddef.h>
-#include <stdio.h>
 /**
- * argstostr - concatenates all the arguments of the program
- * @ac: the number of arguments
- * @av: an array of strings containing the arguments
- * Return: a pointer to the concatenated string, or NULL if it fails
+ * argstostr - Concatenates all the arguments into a new string.
+ * @ac: The number of arguments.
+ * @av: Array of argument strings.
+ * Return: A pointer to a new string containing the concatenated arguments,
+ * or NULL if it fails.
  */
 char *argstostr(int ac, char **av)
 {
-char *str;
-int i = 0, j = 0, len, total_len = 0;
-int k = 0;
+int total_length = 0;
+int i = 0, j = 0;
+char *concatenated_str;
 if (ac == 0 || av == NULL)
 {
-return (NULL);
+return NULL;
 }
 while (i < ac)
 {
-len = 0;
-while (av[i][len] != '\0')
+j = 0;
+while (av[i][j] != '\0')
 {
-len++;
+total_length++;
+j++;
 }
-total_len += len;
+total_length++;
 i++;
 }
-str = malloc(sizeof(char) * (total_len + ac + 1));
-if (str == NULL)
+concatenated_str = (char *)malloc((total_length + 1) * sizeof(char));
+if (concatenated_str == NULL)
 {
-return (NULL);
+return NULL;
 }
 i = 0;
+int position = 0;
 while (i < ac)
 {
-len = 0;
-while (av[i][len] != '\0')
+j = 0;
+while (av[i][j] != '\0')
 {
-str[k] = av[i][len];
-len++;
-k++;
+concatenated_str[position] = av[i][j];
 
