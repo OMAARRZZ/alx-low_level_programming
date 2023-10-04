@@ -10,7 +10,6 @@ char *argstostr(int ac, char **av)
 {
 int total_length = 0;
 int i = 0, j = 0;
-char *concatenated_str;
 if (ac == 0 || av == NULL)
 {
 return NULL;
@@ -23,10 +22,10 @@ while (av[i][j] != '\0')
 total_length++;
 j++;
 }
-total_length++;
+total_length++; // for newline character
 i++;
 }
-concatenated_str = (char *)malloc((total_length + 1) * sizeof(char));
+char *concatenated_str = (char *)malloc((total_length + 1) * sizeof(char));
 if (concatenated_str == NULL)
 {
 return NULL;
@@ -39,4 +38,13 @@ j = 0;
 while (av[i][j] != '\0')
 {
 concatenated_str[position] = av[i][j];
-
+position++;
+j++;
+}
+concatenated_str[position] = '\n';
+position++;
+i++;
+}
+concatenated_str[position] = '\0';
+return concatenated_str;
+}
