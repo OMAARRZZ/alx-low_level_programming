@@ -23,7 +23,7 @@ i++;
 }
 char *result = malloc(total_length + 1); // +1 for the null terminator
 if (result == NULL)
-}
+{
 return NULL;
 }
 int index = 0;
@@ -38,4 +38,7 @@ i++;
 }
 result[total_length] = '\0';
 return result;
+}
+int main(int ac, char *av[])
+{
 
