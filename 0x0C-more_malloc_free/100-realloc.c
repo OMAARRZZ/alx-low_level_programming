@@ -18,11 +18,11 @@ return (NULL);
 }
 if (ptr == NULL)
 {
-return malloc(new_size);
+return (malloc(new_size));
 }
 if (new_size == old_size)
 {
-return ptr;
+return (ptr);
 }
 new_ptr = malloc(new_size);
 if (new_ptr == NULL)
