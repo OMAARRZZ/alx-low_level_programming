@@ -32,7 +32,7 @@ len2++;
 concat = malloc((len1 + n + 1) * sizeof(char));
 if (concat == NULL)
 {
-return NULL;
+return (NULL);
 }
 while (s1[i] != '\0')
 {
@@ -46,5 +46,5 @@ i++;
 j++;
 }
 concat[i] = '\0';
-return concat;
+return (concat);
 }
