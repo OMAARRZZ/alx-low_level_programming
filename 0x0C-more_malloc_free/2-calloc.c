@@ -14,13 +14,13 @@ unsigned int total_size;
 unsigned int i;
 if (nmemb == 0 || size == 0)
 {
-return NULL;
+return (NULL);
 }
 total_size = nmemb * size;
 ptr = malloc(total_size);
 if (ptr == NULL)
 {
-return NULL;
+return (NULL);
 }
 i = 0;
 while (i < total_size)
