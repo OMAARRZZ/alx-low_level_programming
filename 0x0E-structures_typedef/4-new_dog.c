@@ -2,34 +2,47 @@
 #include <string.h>
 #include "dog.h"
 /**
- * new_dog - Creates a new dog with a copy of name and owner
- * @name: Name of the dog
- * @age: Age of the dog
- * @owner: Owner of the dog
- * Return: Pointer to the new dog, or NULL on failure
+ * new_dog - creates a new dog
+ * @name: name of the dog
+ * @age: age of the dog
+ * @owner: owner of the dog
+ * Return: pointer to the new dog_t
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-dog_t *new_dog;
-char *name_copy, *owner_copy;
-new_dog = malloc(sizeof(dog_t));
-if (new_dog != NULL)
+dog_t *newDog;
+newDog = malloc(sizeof(dog_t));
+if (newDog == NULL)
 {
-name_copy = strdup(name);
-owner_copy = strdup(owner);
-if (name_copy == NULL || owner_copy == NULL) 
-{
-free(new_dog);
-free(name_copy);
-free(owner_copy);
 return (NULL);
 }
-new_dog->name = name_copy;
-new_dog->age = age;
-new_dog->owner = owner_copy;
-return (new_dog);
+if (name != NULL)
+{
+newDog->name = strdup(name);
+if (newDog->name == NULL)
+{
+free(newDog);
+return (NULL);
+}
 }
 else
-{ 
+{
+newDog->name = NULL;
+}
+newDog->age = age;
+if (owner != NULL)
+{
+newDog->owner = strdup(owner);
+if (newDog->owner == NULL)
+{
+free(newDog->name);
+free(newDog);
 return (NULL);
+}
+}
+else
+{
+newDog->owner = NULL;
+}
+return (newDog);
 }
