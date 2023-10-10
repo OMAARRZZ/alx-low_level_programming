@@ -47,8 +47,5 @@ newDog->owner = NULL;
 }
 return (newDog);
 }
-else
-{
 return (NULL);
-}
 }
