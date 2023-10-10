@@ -14,5 +14,10 @@ if (d == NULL)
 {
 return;
 }
-    *d = (struct dog) { .name = name, .age = age, .owner = owner };
+else
+{
+d->name = name;
+d->age = age;
+d->owner = owner;
+}
 }
