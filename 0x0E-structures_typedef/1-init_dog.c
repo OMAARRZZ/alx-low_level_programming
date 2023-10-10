@@ -1,12 +1,17 @@
 #include "dog.h"
-#include <stdio.h>
 /**
- * print_dog - Prints the attributes of a struct dog
+ * init_dog - Initializes a variable of type struct dog
  * @d: Pointer to a struct dog
+ * @name: Name of the dog
+ * @age: Age of the dog
+ * @owner: Owner of the dog
  */
-void print_dog(struct dog *d)
+void init_dog(struct dog *d, char *name, float age, char *owner)
 {
-printf("Name: %s\n", d->name != NULL ? d->name : "(nil)");
-printf("Age: %.6f\n", d->age != NULL ? d->age : "(nil)");
-printf("Owner: %s\n", d->owner != NULL ? d->owner : "(nil)");
+if (d != NULL)
+{
+d->name = name;
+d->age = age;
+d->owner = owner;
+}
 }
