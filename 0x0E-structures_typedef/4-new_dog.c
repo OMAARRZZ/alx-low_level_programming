@@ -19,12 +19,13 @@ return (NULL);
 }
 if (name != NULL)
 {
-newDog->name = strdup(name);
+newDog->name = malloc(strlen(name) + 1);
 if (newDog->name == NULL)
 {
 free(newDog);
 return (NULL);
 }
+strcpy(newDog->name, name);
 }
 else
 {
@@ -33,13 +34,14 @@ newDog->name = NULL;
 newDog->age = age;
 if (owner != NULL)
 {
-newDog->owner = strdup(owner);
+newDog->owner = malloc(strlen(owner) + 1);
 if (newDog->owner == NULL)
 {
 free(newDog->name);
 free(newDog);
 return (NULL);
 }
+strcpy(newDog->owner, owner);
 }
 else
 {
