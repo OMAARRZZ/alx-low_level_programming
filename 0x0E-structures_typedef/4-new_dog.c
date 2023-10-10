@@ -17,7 +17,7 @@ if (new_dog != NULL)
 {
 name_copy = strdup(name);
 owner_copy = strdup(owner);
-if (name_copy == NULL || owner_copy == NULL)
+if (name_copy == NULL || owner_copy == NULL) 
 {
 free(new_dog);
 free(name_copy);
@@ -27,4 +27,9 @@ return (NULL);
 new_dog->name = name_copy;
 new_dog->age = age;
 new_dog->owner = owner_copy;
-
+return (new_dog);
+}
+else
+{ 
+return (NULL);
+}
