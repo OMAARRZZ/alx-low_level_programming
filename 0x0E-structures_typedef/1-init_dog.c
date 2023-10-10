@@ -13,7 +13,7 @@ if (d == NULL)
 {
 return;
 }
-g->name = name;
+d->name = name;
 d->age = age;
 d->owner = owner;
 }
