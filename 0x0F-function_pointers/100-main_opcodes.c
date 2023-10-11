@@ -1,6 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
+/**
+ * print_opcodes - Prints the opcodes of a function.
+ * @main_func_start: Starting address of the function
+ * @num_bytes: Number of bytes to print
+ */
 void print_opcodes(char *main_func_start, int num_bytes);
+/**
+ * main - Entry point
+ * @argc: Number of arguments
+ * @argv: Argument vector
+ * Return: 0 on success, 1 for incorrect arguments, 2 for negative bytes
+ */
 int main(int argc, char *argv[])
 {
 if (argc != 2)
