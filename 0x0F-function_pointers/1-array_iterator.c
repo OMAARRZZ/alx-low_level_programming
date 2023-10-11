@@ -18,4 +18,5 @@ if (array != NULL || action != NULL || size != 0)
 		i++;
 	}
 }
+return;
 }
