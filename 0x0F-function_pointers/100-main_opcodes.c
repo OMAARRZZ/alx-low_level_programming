@@ -21,13 +21,15 @@ return (0);
 void print_opcodes(char *main_func_start, int num_bytes)
 {
 printf("Opcode for main:\n");
-for (int i = 0; i < num_bytes; i++)
+int i = 0;
+while (i < num_bytes)
 {
 printf("%02x", main_func_start[i] & 0xFF);
 if (i != num_bytes - 1)
 {
 printf(" ");
 }
+i++;
 }
 printf("\n");
 }
