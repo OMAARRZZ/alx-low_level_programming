@@ -1,54 +1,50 @@
-#include <stdarg.h>
 #include <stdio.h>
-#include "variadic_functions.h"
-/**
- * print_all - Prints anything based on the provided format.
- * @format: The format containing types of arguments to be printed.
- * Return: void
- */
+#include <stdarg.h>
+
 void print_all(const char * const format, ...)
 {
-va_list args;
-const char *ptr = format;
-char current_char;
-int int_arg;
-float float_arg;
-char *str_arg;
-va_start(args, format);
-while (format && *ptr) 
-{
-current_char = *ptr;
-if (current_char == 'c')
-{
-printf("%c", va_arg(args, int));
-} 
-else if (current_char == 'i')
-{
-int_arg = va_arg(args, int);
-printf("%d", int_arg);
-} 
-else if (current_char == 'f') {
-float_arg = (float) va_arg(args, double);
-printf("%f", float_arg);
-} 
-else if (current_char == 's') 
-{
-str_arg = va_arg(args, char *);
-if (str_arg == NULL)
-{
-printf("(nil)");
+    int format_index = 0;
+    int arg_index = 0;
+    va_list arg;
+    char *str;
+
+    va_start(arg, format);
+
+    while (format && format[format_index])
+    {
+        if (format[format_index] == 'c')
+        {
+            printf("%c", va_arg(arg, int));
+            arg_index++;
+        }
+        else if (format[format_index] == 'i')
+        {
+            printf("%d", va_arg(arg, int));
+            arg_index++;
+        }
+        else if (format[format_index] == 'f')
+        {
+            printf("%f", va_arg(arg, double));
+            arg_index++;
+        }
+        else if (format[format_index] == 's')
+        {
+            str = va_arg(arg, char *);
+            if (str == NULL)
+                printf("(nil)");
+            else
+                printf("%s", str);
+            arg_index++;
+        }
+
+        format_index++;
+
+        if (format[format_index])
+            printf(", ");
+    }
+
+    va_end(arg);
+
+    printf("\n");
 }
-else
-{
-printf("%s", str_arg);
-}
-ptr++;
-if (*ptr && (*ptr == 'c' || *ptr == 'i' || *ptr == 'f' || *ptr == 's'))
-{
-printf(", ");
-}
-}
-printf("\n");
-va_end(args);
-}
-}
+
