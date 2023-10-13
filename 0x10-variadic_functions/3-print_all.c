@@ -1,48 +1,56 @@
-#include <stdlib.h>
-#include"variadic_functions.h"
-
-
-char *argstostr(int ac, char **av)
+#include <stdarg.h>
+#include <stdio.h>
+#include "variadic_functions.h"
+/**
+ * print_all - function that prints anything.
+ * @format: list of types of arguments passed to the function
+ * Description: 
+ * 'c' for char type
+ * 'i' for integer type
+ * 'f' for float type
+ * 's' for char * (if the string is NULL, print (nil) instead
+ * any other char should be ignored
+ * Print a new line at the end of your function
+ */
+void print_all(const char * const format, ...)
 {
+    va_list args;
     char *str;
-    int len = 0, i = 0, j;
-
-    if (ac == 0 || av == NULL)
-        return (NULL);
-
-    while (i < ac)
+    char c;
+    int i = 0;
+    double f;
+    int j = 0;
+    va_start(args, format);
+    while (format && format[j])
     {
-        j = 0;
-        while (av[i][j])
+        switch (format[j++])
         {
-            len++;
-            j++;
+            case 'c':
+                c = va_arg(args, int);
+                printf("%c", c);
+                break;
+            case 'i':
+                i = va_arg(args, int);
+                printf("%d", i);
+                break;
+            case 'f':
+                f = va_arg(args, double);
+                printf("%f", f);
+                break;
+            case 's':
+                str = va_arg(args, char *);
+                if (str)
+                    printf("%s", str);
+                else
+                    printf("(nil)");
+                break;
+            default:
+                j = 0;
+                break;
         }
-        len++;
-        i++;
+        if (format[j] != '\0' && j)
+            printf(", ");
     }
-
-    str = malloc(sizeof(char) * (len + 1));
-    if (str == NULL)
-        return (NULL);
-
-    len = 0;
-    i = 0;
-    while (i < ac)
-    {
-        j = 0;
-        while (av[i][j])
-        {
-            _putchar(av[i][j]);
-            str[len++] = av[i][j];
-            j++;
-        }
-        _putchar('\n');
-        str[len++] = '\n';
-        i++;
-    }
-    str[len] = '\0';
-
-    return (str);
+    printf("\n");
+    va_end(args);
 }
-
