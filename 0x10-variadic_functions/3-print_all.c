@@ -1,6 +1,6 @@
 #include <stdlib.h>
+#include"variadic_functions.h"
 
-void _putchar(char c);
 
 char *argstostr(int ac, char **av)
 {
