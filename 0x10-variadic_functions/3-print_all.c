@@ -11,13 +11,14 @@ void print_int(va_list args)
 {
     int num = va_arg(args, int);
 
+    int divisor = 1;
+
     if (num < 0)
     {
         putchar('-');
         num *= -1;
     }
 
-    int divisor = 1;
     while (num / divisor > 9)
         divisor *= 10;
 
