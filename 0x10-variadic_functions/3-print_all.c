@@ -1,10 +1,17 @@
 #include <stdarg.h>
 #include <stdio.h>
-#include "variadic_functions.h"
+#include "variadic_funtcions.h"
+/**
+ * _putchar - writes the character c to stdout
+ * @c: The character to print
+ *
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
+ */
+void _putchar(char c);
 /**
  * print_all - function that prints anything.
  * @format: list of types of arguments passed to the function
- *
  * Description: 
  * 'c' for char type
  * 'i' for integer type
@@ -21,10 +28,7 @@ void print_all(const char * const format, ...)
     int i = 0;
     double f;
     int j = 0;
-
-    /* Initializing args to store all values after format */
     va_start(args, format);
-    /* Start processing the arguments */
     while (format && format[j])
     {
         switch (format[j++])
@@ -43,10 +47,10 @@ void print_all(const char * const format, ...)
                 break;
             case 's':
                 str = va_arg(args, char *);
-                if (str)
-                    printf("%s", str);
-                else
+                if (str == NULL)
                     printf("(nil)");
+                else
+                    printf("%s", str);
                 break;
             default:
                 j = 0;
