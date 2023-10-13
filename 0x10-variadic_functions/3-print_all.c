@@ -8,14 +8,13 @@
  * 'c' for char type
  * 'i' for integer type
  * 'f' for float type
- * 's' for char * (if the string is NULL, print (nil) instead
- * any other char should be ignored
- * Print a new line at the end of your function
+ * 's' for char * (if the string is NULL instead ignored)
  */
 void print_all(const char * const format, ...)
 {
 va_list args;
 int j = 0;
+char *str;
 va_start(args, format);
 while (format && format[j])
 {
@@ -31,7 +30,11 @@ case 'f':
 printf("%f", va_arg(args, double));
 break;
 case 's':
-printf("%s", va_arg(args, char *) ? : "(nil)");
+str = va_arg(args, char *);
+if (str == NULL)
+printf("(nil)");
+else
+printf("%s", str);
 break;
 default:
 j = 0;
@@ -43,4 +46,5 @@ printf(", ");
 }
 printf("\n");
 va_end(args);
+}
 }
