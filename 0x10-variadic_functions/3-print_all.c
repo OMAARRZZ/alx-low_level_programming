@@ -1,50 +1,48 @@
-#include <stdio.h>
-#include <stdarg.h>
+#include <stdlib.h>
 
-void print_all(const char * const format, ...)
+void _putchar(char c);
+
+char *argstostr(int ac, char **av)
 {
-    int format_index = 0;
-    int arg_index = 0;
-    va_list arg;
     char *str;
+    int len = 0, i = 0, j;
 
-    va_start(arg, format);
+    if (ac == 0 || av == NULL)
+        return (NULL);
 
-    while (format && format[format_index])
+    while (i < ac)
     {
-        if (format[format_index] == 'c')
+        j = 0;
+        while (av[i][j])
         {
-            printf("%c", va_arg(arg, int));
-            arg_index++;
+            len++;
+            j++;
         }
-        else if (format[format_index] == 'i')
-        {
-            printf("%d", va_arg(arg, int));
-            arg_index++;
-        }
-        else if (format[format_index] == 'f')
-        {
-            printf("%f", va_arg(arg, double));
-            arg_index++;
-        }
-        else if (format[format_index] == 's')
-        {
-            str = va_arg(arg, char *);
-            if (str == NULL)
-                printf("(nil)");
-            else
-                printf("%s", str);
-            arg_index++;
-        }
-
-        format_index++;
-
-        if (format[format_index])
-            printf(", ");
+        len++;
+        i++;
     }
 
-    va_end(arg);
+    str = malloc(sizeof(char) * (len + 1));
+    if (str == NULL)
+        return (NULL);
 
-    printf("\n");
+    len = 0;
+    i = 0;
+    while (i < ac)
+    {
+        j = 0;
+        while (av[i][j])
+        {
+            _putchar(av[i][j]);
+            str[len++] = av[i][j];
+            j++;
+        }
+        _putchar('\n');
+        str[len++] = '\n';
+        i++;
+    }
+    str[len] = '\0';
+
+    return (str);
 }
 
