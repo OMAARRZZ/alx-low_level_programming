@@ -4,6 +4,7 @@
 /**
  * print_all - function that prints anything.
  * @format: list of types of arguments passed to the function
+ *
  * Description: 
  * 'c' for char type
  * 'i' for integer type
@@ -20,7 +21,10 @@ void print_all(const char * const format, ...)
     int i = 0;
     double f;
     int j = 0;
+
+    /* Initializing args to store all values after format */
     va_start(args, format);
+    /* Start processing the arguments */
     while (format && format[j])
     {
         switch (format[j++])
