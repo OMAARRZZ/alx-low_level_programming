@@ -4,7 +4,7 @@
 /**
  * print_all - function that prints anything.
  * @format: list of types of arguments passed to the function
- * Description: 
+ * Description:
  * 'c' for char type
  * 'i' for integer type
  * 'f' for float type
@@ -14,43 +14,33 @@
  */
 void print_all(const char * const format, ...)
 {
-    va_list args;
-    char *str;
-    char c;
-    int i = 0;
-    double f;
-    int j = 0;
-    va_start(args, format);
-    while (format && format[j])
-    {
-        switch (format[j++])
-        {
-            case 'c':
-                c = va_arg(args, int);
-                printf("%c", c);
-                break;
-            case 'i':
-                i = va_arg(args, int);
-                printf("%d", i);
-                break;
-            case 'f':
-                f = va_arg(args, double);
-                printf("%f", f);
-                break;
-            case 's':
-                str = va_arg(args, char *);
-                if (str == NULL)
-                    printf("(nil)");
-                else
-                    printf("%s", str);
-                break;
-            default:
-                j = 0;
-                break;
-        }
-        if (format[j] != '\0' && j)
-            printf(", ");
-    }
-    printf("\n");
-    va_end(args);
+va_list args;
+int j = 0;
+va_start(args, format);
+while (format && format[j])
+{
+switch (format[j++])
+{
+case 'c':
+printf("%c", va_arg(args, int));
+break;
+case 'i':
+printf("%d", va_arg(args, int));
+break;
+case 'f':
+printf("%f", va_arg(args, double));
+break;
+case 's':
+printf("%s", va_arg(args, char *) ? : "(nil)");
+break;
+default:
+j = 0;
+break;
+}
+if (format[j] != '\0' && j)
+{
+printf(", ");
+}
+printf("\n");
+va_end(args);
 }
