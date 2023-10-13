@@ -1,21 +1,21 @@
+#include <stddef.h>
 #include <stdarg.h>
-#include <stdio.h>
+#include "variadic_functions.h"
 
 void print_char(va_list args)
 {
-    char c = va_arg(args, int);
-    putchar(c);
+    int c = va_arg(args, int);
+    _putchar(c);
 }
 
 void print_int(va_list args)
 {
     int num = va_arg(args, int);
-
     int divisor = 1;
 
     if (num < 0)
     {
-        putchar('-');
+        _putchar('-');
         num *= -1;
     }
 
@@ -25,7 +25,7 @@ void print_int(va_list args)
     while (divisor != 0)
     {
         char digit = '0' + num / divisor;
-        putchar(digit);
+        _putchar(digit);
         num %= divisor;
         divisor /= 10;
     }
@@ -39,7 +39,7 @@ void print_string(va_list args)
 
     while (*str)
     {
-        putchar(*str);
+        _putchar(*str);
         str++;
     }
 }
@@ -48,7 +48,6 @@ void print_all(const char * const format, ...)
 {
     va_list args;
     int i = 0;
-    char *sep = "";
 
     va_start(args, format);
 
@@ -70,12 +69,12 @@ void print_all(const char * const format, ...)
         }
 
         if (format[i + 1])
-            printf("%s", sep);
+            _putchar(',');
 
         i++;
     }
 
     va_end(args);
-    printf("\n");
+    _putchar('\n');
 }
 
