@@ -15,7 +15,7 @@ void print_float(float num) {
 void print_string(char *str) {
     if (str == NULL)
         printf("(nil) ");
-    else
+    if (str != NULL)
         printf("%s ", str);
 }
 
