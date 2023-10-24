@@ -5,6 +5,7 @@
  * struct listint_s - singly linked list
  * @n: Integer data to be stored in the node
  * @next: Pointer to the next node in the list
+ * Description: singly linked list node structure
  */
 typedef struct listint_s
 {
