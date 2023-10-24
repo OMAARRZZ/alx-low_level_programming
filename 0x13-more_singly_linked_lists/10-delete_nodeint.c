@@ -13,6 +13,7 @@ unsigned int i;
 if (head == NULL || *head == NULL)
 {
 return (-1);
+}
 current = *head;
 if (index == 0)
 {
@@ -26,14 +27,11 @@ for (i = 0; i < index; i++)
 if (current == NULL)
 {
 return (-1);
+}
 prev = current;
 current = current->next;
 }
 if (prev != NULL)
 {
 prev->next = current->next;
-free(current);
-return (1);
-}
-return (-1);
-}
+
