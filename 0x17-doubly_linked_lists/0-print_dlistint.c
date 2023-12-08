@@ -15,7 +15,7 @@ return (count);
 }
 while (h->prev != NULL)
 {
-h = h->prev; 
+h = h->prev;
 }
 while (h != NULL)
 {
