@@ -9,7 +9,7 @@ unsigned long int i;
 hash_node_t *node;
 int comma_flag = 0;
 if (ht == NULL)
-{	
+{
 return;
 }
 printf("{");
